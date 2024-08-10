@@ -1,16 +1,24 @@
 using UnityEngine;
 
+[RequireComponent (typeof(Rigidbody2D))]
 public abstract class CreatureController : MonoBehaviour
 {
-	[SerializeField] private ushort _health;
-	[SerializeField] private ushort _maxHealth;
-	[SerializeField] private float _speed;
-	[SerializeField] private float _agrSpeed;
+	[SerializeField] private ushort _health = 100;
+	[SerializeField] private ushort _maxHealth = 100;
+	[SerializeField] protected float speedDefault = 5;
+	[SerializeField] protected float speedSprint = 7;
+
+	protected Rigidbody2D rb;
 
 	private Effects.Effect[] _effects;
 
 	public abstract void Death();
 	public abstract void Move();
+
+	protected virtual void Awake()
+	{
+		rb = GetComponent<Rigidbody2D>();
+	}
 
 	private void Update()
 	{
@@ -48,4 +56,5 @@ public abstract class CreatureController : MonoBehaviour
 
 
 	public bool IsDeath => _health == 0;
+	public ushort MaxHealth => _maxHealth;
 }
