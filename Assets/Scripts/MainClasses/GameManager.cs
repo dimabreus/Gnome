@@ -6,10 +6,9 @@ public class GameManager : MonoBehaviour
 {
     void Start()
     {
-        Screen.orientation = ScreenOrientation.Portrait;
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
         

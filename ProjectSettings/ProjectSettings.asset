@@ -8,11 +8,11 @@ PlayerSettings:
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 3
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: StrongEditorTeam
+  companyName: FOURBLACKGAMES
   productName: Gnome
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -20,11 +20,11 @@ PlayerSettings:
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
-  m_SplashScreenAnimation: 1
+  m_SplashScreenAnimation: 2
   m_SplashScreenLogoStyle: 1
   m_SplashScreenDrawMode: 0
-  m_SplashScreenBackgroundAnimationZoom: 1
-  m_SplashScreenLogoAnimationZoom: 1
+  m_SplashScreenBackgroundAnimationZoom: 0.5
+  m_SplashScreenLogoAnimationZoom: 0.8
   m_SplashScreenBackgroundLandscapeAspect: 1
   m_SplashScreenBackgroundPortraitAspect: 1
   m_SplashScreenBackgroundLandscapeUvs:
@@ -39,7 +39,9 @@ PlayerSettings:
     y: 0
     width: 1
     height: 1
-  m_SplashScreenLogos: []
+  m_SplashScreenLogos:
+  - logo: {fileID: 21300000, guid: cc1bfbab2ada51749bd88a7def6306bd, type: 3}
+    duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
@@ -56,7 +58,7 @@ PlayerSettings:
   numberOfMipsStrippedPerMipmapLimitGroup: {}
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
-  androidShowActivityIndicatorOnLoading: -1
+  androidShowActivityIndicatorOnLoading: 0
   iosUseCustomAppBackgroundBehavior: 0
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
@@ -161,15 +163,16 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.FOURBLACKGAMES.Gnome
     Standalone: com.DefaultCompany.2DProject
   buildNumber:
     Standalone: 0
     VisionOS: 0
     iPhone: 0
     tvOS: 0
-  overrideDefaultApplicationIdentifier: 1
+  overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 22
+  AndroidMinSdkVersion: 26
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -377,7 +380,11 @@ PlayerSettings:
       m_Kind: 0
       m_SubKind: 
   m_BuildTargetBatching: []
-  m_BuildTargetShaderSettings: []
+  m_BuildTargetShaderSettings:
+  - m_BuildTarget: Android
+    m_ChunkSizeInMB: 16
+    m_MaxChunks: 0
+    m_OverrideDefaultSettings: 0
   m_BuildTargetGraphicsJobs:
   - m_BuildTarget: MacStandaloneSupport
     m_GraphicsJobs: 0
