@@ -7,6 +7,6 @@ public class JoystickMovementHandler : MonoBehaviour
 
     private void Update()
     {
-        InputManager.Direction = _joystick.Direction;
+        InputManager.SetDirectionX(_joystick.Direction.x);
     }
 }
