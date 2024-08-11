@@ -16,7 +16,7 @@ namespace Player
         {
             _direction.x = x;
         }
-        public static void SetDirectionlY(float y)
+        public static void SetDirectionY(float y)
         {
             _direction.y = y;
         }
