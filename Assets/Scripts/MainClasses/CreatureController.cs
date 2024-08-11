@@ -27,6 +27,7 @@ public abstract class CreatureController : MonoBehaviour
 
 		ActionUpdate();
 	}
+
 	protected virtual void ActionUpdate()
 	{
 		Move();
@@ -44,9 +45,10 @@ public abstract class CreatureController : MonoBehaviour
 
 		_health -= damage;
 	}
-	public virtual void Healing(ushort healingPoint)
+
+	public virtual void Healing(ushort healAmount)
 	{
-		_health = (ushort)Mathf.Min(_health + healingPoint, _maxHealth);
+		_health = (ushort)Mathf.Min(_health + healAmount, _maxHealth);
 	}
 
 
