@@ -28,6 +28,10 @@ namespace Player
             _onlyJoystick.SetActive(_dropdown.value == 2);
         }
 
-        public static Vector2 Direction { get; set; }
+        public static Vector2 Direction
+        {
+            get => _direction;
+            set => _direction = value;
+        }
     }
 }
