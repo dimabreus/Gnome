@@ -10,7 +10,8 @@ public abstract class CreatureController : MonoBehaviour
 
 	protected Rigidbody2D rb;
 
-	private Effects.Effect[] _effects;
+	// TODO: Add effects
+	//private Effects.Effect[] _effects;
 
 	public abstract void Death();
 	public abstract void Move();

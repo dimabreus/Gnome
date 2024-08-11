@@ -17,6 +17,7 @@ namespace Player
 		public override void Move()
 		{
 			Vector2 move = InputManager.Direction * speedDefault;
+			Debug.Log(move);
 
 			rb.velocity = transform.TransformDirection(move.x, rb.velocity.y, 0);
 
