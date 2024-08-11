@@ -21,14 +21,14 @@ public class GameManager : MonoBehaviour
 
     public void SetFPS()
     {
-        if (_fpsSlider.value < 0f)
-        {
-            Application.targetFrameRate = Mathf.RoundToInt(Mathf.Infinity);
-            QualitySettings.vSyncCount = 1;
-        };
+        bool isMaxFps = _fpsSlider.value < 0f;
 
-        Application.targetFrameRate = Mathf.RoundToInt(_fpsSlider.value + 1) * _fpsMultiplier;
-        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = Mathf.RoundToInt(
+            isMaxFps ? -1
+            : (_fpsSlider.value + 1) * _fpsMultiplier
+            );
+
+        QualitySettings.vSyncCount = isMaxFps ? 1 : 0;
     }
 
     public void CloseGame()
