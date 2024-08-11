@@ -2,29 +2,37 @@ using UnityEngine;
 
 namespace Player
 {
-	internal class PlayerController : CreatureController
-	{
-		[SerializeField] private Joystick _joystick;
-		[SerializeField] private float _jumpForce = 5;
-		[SerializeField] private float _distanceYForCanJump = 0.1f;
-		[SerializeField] private LayerMask _layerMask;
+    internal class PlayerController : CreatureController
+    {
+        [SerializeField] private Joystick _joystick;
+        [SerializeField] private float _jumpForce = 5;
 
-		public override void Death()
-		{
-			Healing(MaxHealth);
-		}
+        [Header("Ground Check")]
+        [SerializeField] private float _distanceYForCanJump = 0.6f;
+        [SerializeField] private LayerMask _groundLayer;
 
-		public override void Move()
-		{
-			Vector2 move = InputManager.Direction * speedDefault;
-			Debug.Log(move);
+        public override void Death()
+        {
+            Healing(MaxHealth);
+        }
 
-			rb.velocity = transform.TransformDirection(move.x, rb.velocity.y, 0);
+        public override void Move()
+        {
+            Vector2 move = InputManager.Direction * speedDefault;
 
-			if (move.y > 0.5f && Physics2D.Raycast(transform.position, Vector2.down, _distanceYForCanJump, _layerMask))
-			{
-				rb.velocity =  Vector2.up * _jumpForce;
-			}
-		}
-	}
+            rb.velocity = transform.TransformDirection(move.x, rb.velocity.y, 0);
+
+            if (move.y > 0.5f && IsGrounded())
+            {
+                rb.velocity = new Vector2(rb.velocity.x, _jumpForce);
+            }
+        }
+
+        private bool IsGrounded()
+        {
+            Vector2 origin = transform.position;
+            Vector2 direction = Vector2.down;
+            return Physics2D.Raycast(origin, direction, _distanceYForCanJump, _groundLayer);
+        }
+    }
 }
