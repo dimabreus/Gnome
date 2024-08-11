@@ -21,10 +21,8 @@ namespace Player
 			_direction.y = y;
 		}
 
-		private void Update()
+		public void SetMethodMove()
 		{
-			Button button = GetComponent<Button>();
-
 			_joystickWithButtons.SetActive(_dropdown.value == 0);
 			_onlyButtons.SetActive(_dropdown.value == 1);
 			_onlyJoystick.SetActive(_dropdown.value == 2);
