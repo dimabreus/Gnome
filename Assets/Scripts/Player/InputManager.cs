@@ -8,7 +8,7 @@ namespace Player
         [SerializeField] GameObject _joystickWithButtons;
         [SerializeField] GameObject _onlyButtons;
         [SerializeField] GameObject _onlyJoystick;
-        [SerializeField] private TMP_Dropdown _dropdown;
+        [SerializeField] private TMP_Dropdown _selectDropdown;
 
         private static Vector2 _direction;
 
@@ -16,6 +16,7 @@ namespace Player
         {
             _direction.x = x;
         }
+
         public static void SetDirectionY(float y)
         {
             _direction.y = y;
@@ -23,9 +24,9 @@ namespace Player
 
         public void SetMethodMove()
         {
-            _joystickWithButtons.SetActive(_dropdown.value == 0);
-            _onlyButtons.SetActive(_dropdown.value == 1);
-            _onlyJoystick.SetActive(_dropdown.value == 2);
+            _joystickWithButtons.SetActive(_selectDropdown.value == 0);
+            _onlyButtons.SetActive(_selectDropdown.value == 1);
+            _onlyJoystick.SetActive(_selectDropdown.value == 2);
         }
 
         public static Vector2 Direction
