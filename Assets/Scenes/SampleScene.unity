@@ -2384,8 +2384,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 373b431791164b643b0f12a6571b5968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sliderFPS: {fileID: 1562259215}
+  _fpsSlider: {fileID: 1562259215}
   _fpsText: {fileID: 471117271}
+  _fpsMultiplier: 30
 --- !u!4 &605636347
 Transform:
   m_ObjectHideFlags: 0
@@ -5209,7 +5210,7 @@ GameObject:
   - component: {fileID: 1562259214}
   - component: {fileID: 1562259215}
   m_Layer: 5
-  m_Name: Set FPS
+  m_Name: SetFpsSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
